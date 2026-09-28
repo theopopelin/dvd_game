@@ -5,10 +5,18 @@ const restartButton = document.querySelector("#restartButton");
 
 restartButton.addEventListener("click", restartGame);
 
+function jump() {
+    vitY = jumpforce;
+}
+
 document.addEventListener("keydown", (event) => {
     if (event.code === "Space") {
-        vitY = jumpforce;
+        jump();
     }
+});
+
+canvas.addEventListener("pointerdown", () => {
+    jump();
 });
 
 document.fonts.ready.then(() => {
